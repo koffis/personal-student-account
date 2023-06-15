@@ -11,7 +11,7 @@ interface IState {
 const initialState: IState = {
   email: "",
   password: "",
-  isAuth: false,
+  isAuth: localStorage.getItem("isAuth") === "true" ? true : false,
   loading: false,
 };
 

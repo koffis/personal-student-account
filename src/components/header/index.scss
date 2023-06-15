@@ -1,0 +1,57 @@
+@import "../../styles/index.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-brand-dark;
+  padding-left: getRem(30);
+  color: $secondary-text-color;
+  overflow-x: hidden;
+
+  img {
+    width: getRem(100);
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: getRem(15);
+
+    &-logout {
+      margin-left: getRem(30);
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.grow {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: getRem(10);
+  padding-left: getRem(15);
+  height: getRem(70);
+  width: auto;
+  margin-right: getRem(-96);
+  float: left;
+  position: relative;
+  background-color: transparent;
+  transition: margin-right 0.5s;
+  -webkit-transition: margin-right 0.5s;
+  text-align: center;
+  overflow: hidden;
+  .k-i-logout {
+    color: white;
+  }
+  &-signout {
+    margin-left: getRem(5);
+    padding-right: getRem(10);
+    color: white;
+    white-space: nowrap;
+  }
+}
+.grow:hover {
+  margin-right: getRem(0);
+}

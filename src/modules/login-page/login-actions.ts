@@ -18,13 +18,10 @@ export const signInUser =
 
 export const signOutUser = () => async (dispatch: AppDispatch) => {
   try {
-    dispatch(startLoader());
     localStorage.removeItem("email");
     localStorage.removeItem("password");
     localStorage.removeItem("isAuth");
-    setTimeout(() => {
-      dispatch(logoutUser());
-    }, 2000);
+    dispatch(logoutUser());
   } catch (error: any) {
     throw error;
   }

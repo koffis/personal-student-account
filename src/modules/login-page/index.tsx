@@ -14,11 +14,13 @@ import logo from "../../assets/images/logo.svg";
 import { startLoader } from "../../redux/auth-slice";
 import { signInUser } from "./login-actions";
 import { UserParams } from "./types";
+import { ROUTES } from "../../const";
 import "./index.scss";
+import Loader from "../../components/loader";
 
 const LoginPage: FC = ({}) => {
   const dispatch = useAppDispatch();
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -29,17 +31,13 @@ const LoginPage: FC = ({}) => {
   const handleSignIn = (params: UserParams) => {
     dispatch(startLoader());
     setTimeout(() => {
-      dispatch(signInUser(params)).then(() => navigate("/home"));
+      dispatch(signInUser(params)).then(() => navigate(ROUTES.home));
     }, 2000);
   };
 
   return (
     <div className="login">
-      {loading && (
-        <Box sx={{ width: "100%" }}>
-          <LinearProgress />
-        </Box>
-      )}
+      {loading && <Loader />}
       <img src={logo} alt="personal student account" />
       <div className="login__form">
         <div className="login__avatar">
