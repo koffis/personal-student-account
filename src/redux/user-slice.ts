@@ -8,7 +8,7 @@ interface IState {
     timeSpended: number;
     yearsOnPlatform: number;
     codeWarsRating: number;
-    dan: string;
+    medals: { image: string; desc: string }[];
   };
   courses: {
     id: number;
@@ -27,14 +27,30 @@ const initialState: IState = {
     endedCourses: 2,
     timeSpended: 432000,
     yearsOnPlatform: 19008000,
-    codeWarsRating: 4.2,
-    dan: "Panda Sensei",
+    codeWarsRating: 4.4,
+    medals: [
+      {
+        image:
+          "https://i.pinimg.com/originals/21/eb/7f/21eb7f3fe42fbd6057a170a2b7efb4c6.png",
+        desc: "Finish a course less than one week",
+      },
+      {
+        image:
+          "https://www.supercoloring.com/sites/default/files/styles/drawing_full/public/fif/2017/05/gold-medal-paper-craft.png",
+        desc: "Buy your first course",
+      },
+      {
+        image:
+          "https://www.maxmedals.com/hubfs/Maxwell-2020/Images/Product_Catalog/Custom_Medals/Die_Cast/DieCastMedals-hoovers-ata-martial-arts.png",
+        desc: "Finish 100 code tasks",
+      },
+    ],
   },
   courses: [
     {
       id: 1,
       courseName: "React.JS + TypeScript advanced",
-      author: "Ada Wong",
+      author: "Bill Brama",
       duration: 72000,
       progress: 22,
       rate: 4,

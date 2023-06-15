@@ -5,7 +5,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { startLoader } from "../../redux/auth-slice";
 import { signOutUser } from "../../modules/login-page/login-actions";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../const";
 import "./index.scss";
 
@@ -24,7 +24,9 @@ const Header: FC = ({}) => {
 
   return (
     <div className="header">
-      <img src={logo} alt="personal student account" />
+      <Link to={ROUTES.home}>
+        <img src={logo} alt="personal student account" />
+      </Link>
       <div className="grow header__user">
         <span>
           {name.at(0)}. {name.split(" ")[1]}

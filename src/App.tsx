@@ -3,8 +3,9 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import { ROUTES } from "./const";
 import LoginPage from "./modules/login-page";
 import AccountPage from "./modules/account-page";
-import "./styles/index.scss";
 import { useAppSelector } from "./hooks/redux";
+import CoursePage from "./modules/course-page";
+import "./styles/index.scss";
 
 const App: FC = ({}) => {
   const { root, login, home, course, pageNotFound } = ROUTES;
@@ -21,7 +22,10 @@ const App: FC = ({}) => {
         path={home}
         element={isAuth ? <AccountPage /> : <Navigate to={login} replace />}
       />
-      {/* <Route path={course} element={<Overview />} /> */}
+      <Route
+        element={isAuth ? <CoursePage /> : <Navigate to={login} replace />}
+        path={course}
+      />
       <Route path={root} element={<Navigate to={home} replace />} />
       {/* <Route path={pageNotFound} element={<Oops />} /> */}
     </Routes>

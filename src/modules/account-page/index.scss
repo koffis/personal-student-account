@@ -1,4 +1,55 @@
 @import "../../styles/index.scss";
 
 .account {
+  display: flex;
+  padding: getRem(30) getRem(75);
+  gap: getRem(20);
+
+  a {
+    color: $primary-text-color;
+  }
+
+  h3 {
+    font-size: getRem(30);
+    font-weight: 400;
+    margin-bottom: getRem(25);
+  }
+
+  &__courses {
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: getRem(20);
+    }
+  }
+
+  &__achievements {
+    width: getRem(400);
+
+    &-list {
+      width: fill-available;
+      display: flex;
+      flex-direction: column;
+      border-radius: getRem(4);
+      border-radius: 4px;
+      box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      padding: getRem(15);
+
+      &-item {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: getRem(15);
+
+        b {
+          margin-right: getRem(10);
+        }
+      }
+
+      img {
+        width: getRem(50);
+      }
+    }
+  }
 }
