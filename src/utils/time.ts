@@ -1,1 +1,1 @@
-export const secondsToHours = (seconds: number) => seconds / 3600;
+export const secondsToHours = (seconds: number): number => seconds / 3600;

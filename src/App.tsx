@@ -8,7 +8,7 @@ import CoursePage from "./modules/course-page";
 import "./styles/index.scss";
 
 const App: FC = ({}) => {
-  const { root, login, home, course, pageNotFound } = ROUTES;
+  const { root, login, home, course } = ROUTES;
 
   const { isAuth } = useAppSelector((state) => state.auth);
 
@@ -27,7 +27,6 @@ const App: FC = ({}) => {
         path={course}
       />
       <Route path={root} element={<Navigate to={home} replace />} />
-      {/* <Route path={pageNotFound} element={<Oops />} /> */}
     </Routes>
   );
 };

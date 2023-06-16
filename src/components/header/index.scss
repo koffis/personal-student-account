@@ -8,6 +8,9 @@
   padding-left: getRem(30);
   color: $secondary-text-color;
   overflow-x: hidden;
+  position: fixed;
+  width: fill-available;
+  z-index: 10;
 
   img {
     width: getRem(100);

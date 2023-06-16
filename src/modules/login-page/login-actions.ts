@@ -1,5 +1,5 @@
 import { AppDispatch } from "../../redux/store";
-import { loginUser, logoutUser, startLoader } from "../../redux/auth-slice";
+import { loginUser, logoutUser } from "../../redux/auth-slice";
 import { UserParams } from "./types";
 
 export const signInUser =

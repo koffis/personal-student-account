@@ -4,6 +4,7 @@
   display: flex;
   padding: getRem(30) getRem(75);
   gap: getRem(20);
+  padding-top: getRem(100);
 
   a {
     color: $primary-text-color;

@@ -3,5 +3,4 @@ export const ROUTES = {
   login: "/login",
   home: "/home",
   course: "/course",
-  pageNotFound: "/404",
 };

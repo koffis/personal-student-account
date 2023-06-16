@@ -49,7 +49,7 @@ const CourseHeader: FC<CourseHeaderProps> = ({ course }) => {
         <Card sx={{ width: 345 }}>
           <CardHeader
             avatar={
-              <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
+              <Avatar sx={{ bgcolor: "#3d5afe" }} aria-label="recipe">
                 {course.author.slice(0, 1)}
               </Avatar>
             }

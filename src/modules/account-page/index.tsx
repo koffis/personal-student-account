@@ -4,6 +4,7 @@ import { useAppSelector } from "../../hooks/redux";
 import Loader from "../../components/loader";
 import CourseCard from "./subcomponents/card";
 import Achievements from "./subcomponents/achievements";
+import Footer from "../../components/footer";
 import "./index.scss";
 
 const AccountPage: FC = ({}) => {
@@ -32,6 +33,7 @@ const AccountPage: FC = ({}) => {
         </div>
         <Achievements achievements={achievements} />
       </div>
+      <Footer />
     </>
   );
 };

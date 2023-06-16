@@ -1,22 +1,15 @@
 import { FC, useState } from "react";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import { useNavigate } from "react-router-dom";
-import {
-  Box,
-  Button,
-  Checkbox,
-  FormControlLabel,
-  LinearProgress,
-  TextField,
-} from "@mui/material";
+import { Button, Checkbox, FormControlLabel, TextField } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import logo from "../../assets/images/logo.svg";
 import { startLoader } from "../../redux/auth-slice";
 import { signInUser } from "./login-actions";
 import { UserParams } from "./types";
 import { ROUTES } from "../../const";
-import "./index.scss";
 import Loader from "../../components/loader";
+import "./index.scss";
 
 const LoginPage: FC = ({}) => {
   const dispatch = useAppDispatch();
@@ -24,11 +17,11 @@ const LoginPage: FC = ({}) => {
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [remember, setRemember] = useState<string>("");
+  const [remember, setRemember] = useState<boolean>(false);
 
   const { loading } = useAppSelector((state) => state.auth);
 
-  const handleSignIn = (params: UserParams) => {
+  const handleSignIn = (params: UserParams): void => {
     dispatch(startLoader());
     setTimeout(() => {
       dispatch(signInUser(params)).then(() => navigate(ROUTES.home));
@@ -62,7 +55,7 @@ const LoginPage: FC = ({}) => {
           fullWidth
         />
         <FormControlLabel
-          control={<Checkbox onChange={(e) => setRemember(e.target.value)} />}
+          control={<Checkbox onChange={(e) => setRemember(!remember)} />}
           label="Remember me"
         />
         <Button
@@ -72,7 +65,7 @@ const LoginPage: FC = ({}) => {
             handleSignIn({
               email,
               password,
-              rememberMe: true,
+              rememberMe: remember,
             })
           }
         >
