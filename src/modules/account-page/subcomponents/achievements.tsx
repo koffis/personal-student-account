@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { secondsToHours } from "../utils";
 import { Rating, Tooltip } from "@mui/material";
+import { secondsToHours } from "../../../utils/time";
 
 const Achievements: FC<{
   achievements: {

@@ -1,4 +1,59 @@
 @import "../../styles/index.scss";
 
 .course {
+  &__info {
+    width: fill-available;
+    display: flex;
+    background-color: $secondary-brand-light;
+    justify-content: space-between;
+    gap: getRem(150);
+    color: $secondary-text-color;
+    padding: getRem(40) getRem(250);
+
+    &-description {
+      &-aims {
+        display: flex;
+        flex-direction: column;
+        gap: getRem(15);
+        span {
+          display: inline-flex;
+          align-items: center;
+          font-size: getRem(16);
+
+          path {
+            fill: rgb(231, 231, 0);
+          }
+        }
+      }
+    }
+
+    h3 {
+      font-size: getRem(36);
+    }
+
+    p {
+      font-size: getRem(16);
+    }
+  }
+
+  &__plan {
+    h4 {
+      font-size: getRem(25);
+      padding: getRem(40) getRem(250);
+    }
+
+    &-table {
+      width: fill-available !important;
+      margin: getRem(20) getRem(200);
+
+      &-collapse {
+        padding: getRem(15) getRem(20);
+        h3 {
+          font-weight: 500;
+          font-size: getRem(16);
+          margin-bottom: getRem(20);
+        }
+      }
+    }
+  }
 }

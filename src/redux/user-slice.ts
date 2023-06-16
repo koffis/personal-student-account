@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { UserParams } from "../modules/login-page/types";
 
 interface IState {
   name: string;
